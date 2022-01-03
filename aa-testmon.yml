@@ -1,0 +1,5 @@
+- name: test playbook with semaphore
+  hosts: testmon
+  remote_user: mongoadm
+  tasks: 
+     - action: ping
