@@ -42,5 +42,4 @@
           RAM: {{ ansible_memtotal_mb }}
           SWAP: {{ ansible_memory_mb.swap.total }}
         debug:
-
           msg: "{{ msg.split('\n') }}"
