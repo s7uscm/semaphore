@@ -1,0 +1,21 @@
+---
+ - name: Playbook to upgrade PMM2 agent
+   hosts: all
+   become: yes
+   gather_facts: no
+   tasks:
+     - name: Stop pmm-agent
+       service:
+         name: pmm-agent
+         state: stopped
+
+     - name: Install PMM2 Client
+       yum:
+         name: pmm2-client
+         state: latest
+         update_cache: true
+
+     - name: Start pmm-agent
+       service:
+         name: pmm-agent
+         state: started
